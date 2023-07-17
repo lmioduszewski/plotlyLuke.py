@@ -850,7 +850,7 @@ class Layout(_BaseLayoutType):
 
         The 'clickmode' property is a flaglist and may be specified
         as a string containing:
-          - Any combination of ['event', 'select'] joined with '+' characters
+          - Any combination of ['event', 'select','anywhere'] joined with '+' characters
             (e.g. 'event+select')
             OR exactly one of ['none'] (e.g. 'none')
 
@@ -5331,7 +5331,13 @@ class Layout(_BaseLayoutType):
             sent accordingly as long as "event" flag is set as
             well. When the "event" flag is missing, `plotly_click`
             and `plotly_selected` events are not fired.
-        coloraxis
+            The *anywhere* flag extends the *select* flag by allowing to trigger 
+            a click event anywhere in the plot. The click event will always
+            include *x* and *y* coordinates and if a data point is below
+            the cursor it will also include information about the data 
+            point. When specifying *anywhere* the *select* flag becomes 
+            superfluous.
+            coloraxis
             :class:`plotly.graph_objects.layout.Coloraxis` instance
             or dict with compatible properties
         colorscale
@@ -5920,6 +5926,12 @@ class Layout(_BaseLayoutType):
             sent accordingly as long as "event" flag is set as
             well. When the "event" flag is missing, `plotly_click`
             and `plotly_selected` events are not fired.
+            The *anywhere* flag extends the *select* flag by allowing to trigger 
+            a click event anywhere in the plot. The click event will always
+            include *x* and *y* coordinates and if a data point is below
+            the cursor it will also include information about the data 
+            point. When specifying *anywhere* the *select* flag becomes 
+            superfluous.
         coloraxis
             :class:`plotly.graph_objects.layout.Coloraxis` instance
             or dict with compatible properties

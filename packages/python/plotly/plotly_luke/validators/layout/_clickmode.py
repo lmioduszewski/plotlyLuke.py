@@ -8,6 +8,6 @@ class ClickmodeValidator(_plotly_utils.basevalidators.FlaglistValidator):
             parent_name=parent_name,
             edit_type=kwargs.pop("edit_type", "plot"),
             extras=kwargs.pop("extras", ["none"]),
-            flags=kwargs.pop("flags", ["event", "select"]),
+            flags=kwargs.pop("flags", ["event", "select","anywhere"]),
             **kwargs,
         )
